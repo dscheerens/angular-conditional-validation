@@ -1,0 +1,21 @@
+{
+  "name": "angular-conditional-validation",
+  "version": "0.1.0",
+  "description": "AngularJS module that enables conditional validation",
+  "main": "dist/angular-conditional-validation.js",
+  "authors": [
+    "Daan Scheerens"
+  ],
+  "license": "MIT",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.4.1"
+  }
+}

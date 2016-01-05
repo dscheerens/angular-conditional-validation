@@ -1,0 +1,30 @@
+{
+  "name": "angular-conditional-validation",
+  "version": "0.1.0",
+  "description": "AngularJS module that enables conditional validation",
+  "main": "dist/angular-conditional-validation.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "Daan Scheerens",
+  "license": "MIT",
+  "devDependencies": {
+    "angular-mocks": "^1.4.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-bump": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sequence": "^0.4.3",
+    "gulp-uglify": "^1.5.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.16",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.2",
+    "lodash": "^3.10.1",
+    "phantomjs": "^1.9.19"
+  },
+  "dependencies": {
+    "angular": "^1.4.1"
+  }
+}

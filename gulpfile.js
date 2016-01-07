@@ -3,9 +3,29 @@ var del = require('del');
 var bump = require('gulp-bump');
 var gulp = require('gulp');
 var gulpSequence = require('gulp-sequence').use(gulp);
+var header = require('gulp-header');
 var KarmaServer = require('karma').Server;
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var umd = require('gulp-umd');
+
+var UMD_CONFIG = {
+	exports: function() { return '\'angularConditionalValidation\''; },
+	namespace: function() { return 'angularConditionalValidation'; }
+};
+
+var BANNER = (
+	'/*!\n' +
+	' * <%= pkg.name %>\n' +
+	' * @version v<%= pkg.version %>\n' +
+	' * @link <%= pkg.homepage %>\n' +
+	' * @license <%= pkg.license %>\n' +
+	' */\n'
+);
+
+var HEADER_CONFIG = {
+	pkg: require('./package.json')
+}
 
 gulp.task('default', createTestTask('src/*.js', { singleRun: false }));
 
@@ -26,15 +46,19 @@ gulp.task('test-build-min', createTestTask('build/angular-conditional-validation
 gulp.task('build-dev', function() {
 	return gulp
 		.src('src/*.js')
+		.pipe(umd(UMD_CONFIG))
+		.pipe(header(BANNER, HEADER_CONFIG))
 		.pipe(gulp.dest('build'));
 });
 
 gulp.task('build-min', function() {
 	return gulp
-		.src('src/*.js')
+		.src('src/angular-conditional-validation.js')
+		.pipe(umd(UMD_CONFIG))
 		.pipe(uglify({
 			// ...
 		}))
+		.pipe(header(BANNER, HEADER_CONFIG))
 		.pipe(rename({
 			extname: '.min.js'
 		}))

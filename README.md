@@ -41,13 +41,13 @@ Another reason for using the `enableValidation` directive is when you use (custo
 Installation
 ------------
 
-** NPM **
+**NPM**
 
 ```
 npm install angular-conditional-validation
 ```
 
-** Bower **
+**Bower**
 
 ```
 bower install angular-conditional-validation
@@ -57,8 +57,8 @@ bower install angular-conditional-validation
 Usage
 -----
 
-To use the Angular conditional validation module in your application either include the script using a `<script>` tag or require/load it via a script loader.
-Furthermore add `angularConditionalValidation` the Angular dependencies of your application.
+To use the Angular conditional validation module in your application either include the script (`angular-conditional-validation(.min).js`) using a `<script>` tag or require/load it via a script loader.
+Furthermore add `angularConditionalValidation` to the Angular dependencies of your application.
 
 Now you should be able to use the `enableValidation` directive in your templates.
 

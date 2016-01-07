@@ -12,7 +12,7 @@ Motivation
 
 Most (if not all) of the standard Angular validators can be disabled individually using *falsy* values.
 For example when the expression for a `ngMin` attribute evaluates to `undefined`, then validation will be disabled for the `min` validator.
-This, however, requires that the logic that determines when validation should be enabled is combined with the logic that defines the values for parameterized validators.
+However, this requires that the logic that determines when validation should be enabled is combined with the logic that defines the values for parameterized validators.
 At best you can write something like this:
 
 ```html
@@ -34,21 +34,33 @@ The result:
 <input type="date" ng-model="myCtrl.startDate" ng-min="myCtrl.minStartDate" ng-max="myCtrl.maxStartDate" enable-validation="myCtrl.enableStartDateValidation">
 ```
 
-Another reason for using the `enableValidation` directive is when you use (custom) validators that do provide a method to (conditionally) disable them.
+Another reason for using the `enableValidation` directive is when you use (custom) validators that do not provide a method to (conditionally) disable them.
 
 
 
 Installation
 ------------
 
-*Todo: write this section*
+** NPM **
 
+```
+npm install angular-conditional-validation
+```
+
+** Bower **
+
+```
+bower install angular-conditional-validation
+```
 
 
 Usage
 -----
 
-*Todo: write this section*
+To use the Angular conditional validation module in your application either include the script using a `<script>` tag or require/load it via a script loader.
+Furthermore add `angularConditionalValidation` the Angular dependencies of your application.
+
+Now you should be able to use the `enableValidation` directive in your templates.
 
 
 

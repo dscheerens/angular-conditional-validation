@@ -62,6 +62,14 @@ Furthermore add `angularConditionalValidation` to the Angular dependencies of yo
 
 Now you should be able to use the `enableValidation` directive in your templates.
 
+The directive supports three types of values:
+
+* **Objects:** When object values are used to enable/disable validation for individial validators. The property keys of the object should match with name of the validators. The value of a property (which may be a function) determines whether validation is enabled/disabled.
+* **Functions:** Functions values will be invoked every time validation is triggered and the return value (which may be an object) is then used to determine whether validation is enabled or disabled.
+* **Other:** Any other value type will be evaluated as an inherent boolean value, so any *truthy* value enables validation while *falsy* values disable validation.
+
+Both synchronous and asynchronous validators are supported by the `enableValidation` directive.
+
 
 
 Examples
@@ -74,4 +82,4 @@ Examples
 Limitations
 -----------
 
-*Todo: write this section*
+* Promises are not supported.

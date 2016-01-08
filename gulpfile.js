@@ -10,7 +10,8 @@ var uglify = require('gulp-uglify');
 var umd = require('gulp-umd');
 
 var UMD_CONFIG = {
-	exports: function() { return '\'angularConditionalValidation\''; },
+	dependencies: function() { return ['angular'];},
+	exports: function() { return 'angularConditionalValidation'; },
 	namespace: function() { return 'angularConditionalValidation'; }
 };
 

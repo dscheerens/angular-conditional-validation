@@ -1,3 +1,18 @@
+/*!
+ * angular-conditional-validation
+ * @version v0.1.0
+ * @link https://github.com/dscheerens/angular-conditional-validation
+ * @license MIT
+ */
+;(function(root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['angular'], factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory(require('angular'));
+  } else {
+    root.angularConditionalValidation = factory(root.angular);
+  }
+}(this, function(angular) {
 var angularConditionalValidation = angular.module('angularConditionalValidation', ['ng'])
 	.directive('enableValidation', ['$parse', '$q', function($parse, $q) { return {
 		
@@ -117,3 +132,5 @@ var angularConditionalValidation = angular.module('angularConditionalValidation'
 		}
 
 	}}]);
+return angularConditionalValidation;
+}));

@@ -87,23 +87,17 @@ Examples
 
 A set of demos can be found at the following JS Bin: [jsbin.com/necile](https://jsbin.com/necile/)
 
-**Simple boolean validation condition**
-
-*Inside Angular controller:*
+### Simple boolean validation condition
 ```javascript
 var ctrl = this;
 ctrl.someValue = 'hello';
 ctrl.anotherValue = true;
 ```
-
-*Inside HTML template:*
 ```html
 <input type="text" ng-model="ctrl.someValue" ng-minlength="5" enable-validation="ctrl.anotherValue">
 ```
 
-**Function based validation condition**
-
-*Inside Angular controller:*
+### Function based validation condition
 ```javascript
 var ctrl = this;
 ctrl.someValue = 'hello';
@@ -111,15 +105,11 @@ ctrl.shouldValidate = function() {
   return new Date().getDay() == 1; // Only validate on mondays :)
 };
 ```
-
-*Inside HTML template:*
 ```html
 <input type="text" ng-model="ctrl.someValue" ng-minlength="5" enable-validation="ctrl.shouldValidate">
 ```
 
-**Object based validation condition**
-
-*Inside Angular controller:*
+### Object based validation condition
 ```javascript
 var ctrl = this;
 ctrl.someValue = 'hello';
@@ -129,8 +119,6 @@ ctrl.enabledValidators = {
   '*': false // Disable other validators.
 };
 ```
-
-*Inside HTML template:*
 ```html
 <input
   type="text"
@@ -142,9 +130,7 @@ ctrl.enabledValidators = {
   enable-validation="ctrl.enabledValidators">
 ```
 
-**Mixing functions and objects**
-
-*Inside Angular controller:*
+### Mixing functions and objects
 ```javascript
 var ctrl = this;
 ctrl.someValue = 'hello';
@@ -158,8 +144,6 @@ ctrl.enabledValidators = function() {
   };
 };
 ```
-
-*Inside HTML template:*
 ```html
 <input
   type="text"

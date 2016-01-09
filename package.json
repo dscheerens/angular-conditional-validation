@@ -1,17 +1,20 @@
 {
   "name": "angular-conditional-validation",
   "version": "0.1.1",
-  "homepage": "https://github.com/dscheerens/angular-conditional-validation",
   "description": "AngularJS module that enables conditional validation",
-  "main": "dist/angular-conditional-validation.js",
-  "scripts": {
-    "test": "gulp test"
-  },
-  "repository": {
-    "url": "git://github.com/dscheerens/angular-conditional-validation.git"
-  },
+  "homepage": "https://github.com/dscheerens/angular-conditional-validation",
   "author": "Daan Scheerens",
   "license": "MIT",
+  "keywords": [
+    "angular",
+    "conditional",
+    "validation"
+  ],
+  "repository": {
+    "type" : "git",
+    "url": "git://github.com/dscheerens/angular-conditional-validation.git"
+  },
+  "main": "dist/angular-conditional-validation.js",
   "devDependencies": {
     "angular-mocks": "^1.4.1",
     "del": "^2.2.0",
@@ -32,5 +35,8 @@
   "dependencies": {
     "angular": "^1.4.1",
     "gulp-header": "^1.7.1"
+  },
+  "scripts": {
+    "test": "gulp test"
   }
 }

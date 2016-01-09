@@ -17,6 +17,7 @@
     "url": "git://github.com/dscheerens/angular-conditional-validation.git"
   },
   "ignore": [
+    "**/.*",
     "node_modules",
     "bower_components",
     "src",

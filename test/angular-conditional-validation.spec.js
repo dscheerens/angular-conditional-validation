@@ -115,18 +115,14 @@ describe('"enable-validation" directive', function() {
 		expect($scope.form.field.$error.minlength).toBeTruthy();
 		expect($scope.form.field.$error.pattern).toBeTruthy();
 
-		$scope.enableValidation = angular.extend({}, $scope.enableValidation, {
-			pattern: false
-		});
+		$scope.enableValidation.pattern = false;
 		$scope.$digest();
 
 		expect($scope.form.$invalid).toBeTruthy();
 		expect($scope.form.field.$error.minlength).toBeTruthy();
 		expect($scope.form.field.$error.pattern).toBeFalsy();
 
-		$scope.enableValidation = angular.extend({}, $scope.enableValidation, {
-			'*': false
-		});
+		$scope.enableValidation['*'] = false;
 		$scope.$digest();
 
 		expect($scope.form.$valid).toBeTruthy();

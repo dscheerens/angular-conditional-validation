@@ -26,7 +26,7 @@ var angularConditionalValidation = angular.module('angularConditionalValidation'
 			scope.$watch(attributes.enableValidation, function(value) {
 				enableValidation = value;
 				modelController.$validate();
-			});
+			}, true);
 
 			// Monitor validator sets for changes so new validators can be wrapped in order to override their validation behavior.
 			scope.$watch(function validatorSetWatch() {

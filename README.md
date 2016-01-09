@@ -16,14 +16,20 @@ However, this requires that the logic that determines when validation should be 
 At best you can write something like this:
 
 ```html
-<input type="date" ng-model="myCtrl.startDate" ng-min="myCtrl.enableStartDateValidation && myCtrl.minStartDate">
+<input
+  type="date"
+  ng-model="myCtrl.startDate"
+  ng-min="myCtrl.enableStartDateValidation && myCtrl.minStartDate">
 ```
 
 The `enableValidation` directive provides a cleaner method to separate the logic.
 When applied to the example above, the result looks like this:
 
 ```html
-<input type="date" ng-model="myCtrl.startDate" ng-min="myCtrl.minStartDate" enable-validation="myCtrl.enableStartDateValidation">
+<input type="date"
+  ng-model="myCtrl.startDate"
+  ng-min="myCtrl.minStartDate"
+  enable-validation="myCtrl.enableStartDateValidation">
 ```
 
 Using the `enableValidation` directive it also easier to disable multiple validators at once.
@@ -31,7 +37,11 @@ If the example above is extended with a `max` validator, you can simply add the 
 The result:
 
 ```html
-<input type="date" ng-model="myCtrl.startDate" ng-min="myCtrl.minStartDate" ng-max="myCtrl.maxStartDate" enable-validation="myCtrl.enableStartDateValidation">
+<input type="date"
+  ng-model="myCtrl.startDate"
+  ng-min="myCtrl.minStartDate"
+  ng-max="myCtrl.maxStartDate"
+  enable-validation="myCtrl.enableStartDateValidation">
 ```
 
 Another reason for using the `enableValidation` directive is when you use (custom) validators that do not provide a method to (conditionally) disable them.
@@ -75,9 +85,91 @@ Both synchronous and asynchronous validators are supported by the `enableValidat
 Examples
 --------
 
-*Todo: write this section*
+A set of demos can be found at the following JS Bin: [jsbin.com/necile](https://jsbin.com/necile/)
 
+**Simple boolean validation condition**
 
+*Inside Angular controller:*
+```javascript
+var ctrl = this;
+ctrl.someValue = 'hello';
+ctrl.anotherValue = true;
+```
+
+*Inside HTML template:*
+```html
+<input type="text" ng-model="ctrl.someValue" ng-minlength="5" enable-validation="ctrl.anotherValue">
+```
+
+**Function based validation condition**
+
+*Inside Angular controller:*
+```javascript
+var ctrl = this;
+ctrl.someValue = 'hello';
+ctrl.shouldValidate = function() {
+  return new Date().getDay() == 1; // Only validate on mondays :)
+};
+```
+
+*Inside HTML template:*
+```html
+<input type="text" ng-model="ctrl.someValue" ng-minlength="5" enable-validation="ctrl.shouldValidate">
+```
+
+**Object based validation condition**
+
+*Inside Angular controller:*
+```javascript
+var ctrl = this;
+ctrl.someValue = 'hello';
+ctrl.enabledValidators = {
+  required: false,
+  minlength: true,
+  '*': false // Disable other validators.
+};
+```
+
+*Inside HTML template:*
+```html
+<input
+  type="text"
+  ng-model="ctrl.someValue"
+  required
+  ng-minlength="4"
+  ng-maxlength="6"
+  pattern="abcde"
+  enable-validation="ctrl.enabledValidators">
+```
+
+**Mixing functions and objects**
+
+*Inside Angular controller:*
+```javascript
+var ctrl = this;
+ctrl.someValue = 'hello';
+ctrl.enabledValidators = function() {
+  return {
+    required: false,
+    minlength: true,
+    '*': function() {
+      return new Date().getDay() == 2; // Other validators are only enabled on tuesday.
+    }
+  };
+};
+```
+
+*Inside HTML template:*
+```html
+<input
+  type="text"
+  ng-model="ctrl.someValue"
+  required
+  ng-minlength="4"
+  ng-maxlength="6"
+  pattern="abcde"
+  enable-validation="ctrl.enabledValidators">
+```
 
 Limitations
 -----------

@@ -1,6 +1,6 @@
 {
   "name": "angular-conditional-validation",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "AngularJS module that enables conditional validation",
   "homepage": "https://github.com/dscheerens/angular-conditional-validation",
   "author": "Daan Scheerens",
@@ -11,7 +11,7 @@
     "validation"
   ],
   "repository": {
-    "type" : "git",
+    "type": "git",
     "url": "git://github.com/dscheerens/angular-conditional-validation.git"
   },
   "main": "dist/angular-conditional-validation.js",

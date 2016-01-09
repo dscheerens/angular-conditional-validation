@@ -1,6 +1,6 @@
 /*!
  * angular-conditional-validation
- * @version v0.1.1
+ * @version v0.1.2
  * @link https://github.com/dscheerens/angular-conditional-validation
  * @license MIT
  */

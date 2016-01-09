@@ -1,4 +1,4 @@
-[![Build Status](https://api.travis-ci.org/dscheerens/angular-conditional-validation.svg?branch=master)](https://travis-ci.org/dscheerens/angular-conditional-validation)
+[![Build Status](https://api.travis-ci.org/dscheerens/angular-conditional-validation.svg?branch=master)](https://travis-ci.org/dscheerens/angular-conditional-validation) [![NPM](https://img.shields.io/npm/v/angular-conditional-validation.svg)](https://www.npmjs.com/package/angular-conditional-validation)
 
 Angular conditional validation module
 =====================================
@@ -82,6 +82,13 @@ Both synchronous and asynchronous validators are supported by the `enableValidat
 
 
 
+Limitations
+-----------
+
+* Promises are not supported.
+
+
+
 Examples
 --------
 
@@ -154,8 +161,3 @@ ctrl.enabledValidators = function() {
   pattern="abcde"
   enable-validation="ctrl.enabledValidators">
 ```
-
-Limitations
------------
-
-* Promises are not supported.
